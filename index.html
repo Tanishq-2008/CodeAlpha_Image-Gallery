@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="title">
+                <i class="fas fa-images"></i> Photo Gallery
+            </h1>
+            <p class="subtitle">Explore our beautiful collection</p>
+        </div>
+    </header>
+
+    <!-- Filter Buttons -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-controls">
+                <button class="filter-btn active" data-filter="all">
+                    All Photos
+                </button>
+                <button class="filter-btn" data-filter="nature">
+                    Nature
+                </button>
+                <button class="filter-btn" data-filter="architecture">
+                    Architecture
+                </button>
+                <button class="filter-btn" data-filter="people">
+                    People
+                </button>
+                <button class="filter-btn" data-filter="abstract">
+                    Abstract
+                </button>
+            </div>
+
+            <!-- Image Filters -->
+            <div class="image-filters">
+                <label class="filter-option">
+                    <input type="checkbox" id="grayscale" class="image-filter-input">
+                    <span>Grayscale</span>
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" id="sepia" class="image-filter-input">
+                    <span>Sepia</span>
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" id="blur" class="image-filter-input">
+                    <span>Blur</span>
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" id="brightness" class="image-filter-input">
+                    <span>Brightness</span>
+                </label>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <main class="gallery-section">
+        <div class="container">
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Gallery items will be inserted here by JavaScript -->
+            </div>
+            <div class="loading-spinner" id="loadingSpinner">
+                <i class="fas fa-spinner"></i>
+                <p>Loading images...</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <!-- Close Button -->
+            <button class="lightbox-close" id="closeLightbox">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <!-- Main Image -->
+            <div class="lightbox-image-container">
+                <img id="lightboxImage" src="" alt="Lightbox Image" class="lightbox-image">
+                <div class="image-info">
+                    <p id="imageTitle" class="image-title"></p>
+                    <p id="imageCategory" class="image-category"></p>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <button class="lightbox-nav prev" id="prevBtn">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="lightbox-nav next" id="nextBtn">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <!-- Thumbnails Strip -->
+            <div class="thumbnails-container">
+                <div class="thumbnails" id="thumbnails">
+                    <!-- Thumbnails will be inserted here -->
+                </div>
+            </div>
+
+            <!-- Image Counter -->
+            <div class="image-counter">
+                <span id="imageCounter">1 / 12</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>
